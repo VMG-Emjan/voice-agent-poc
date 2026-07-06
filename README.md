@@ -1,6 +1,6 @@
 # Voice / Conversational-AI POC — appointment booking + call routing
 
-[![ci](https://github.com/VMG-Emjan/voice-agent-poc/actions/workflows/ci.yml/badge.svg)](https://github.com/VMG-Emjan/voice-agent-poc/actions/workflows/ci.yml)
+[![ci](https://github.com/VMG-Emjan/Test/actions/workflows/ci.yml/badge.svg)](https://github.com/VMG-Emjan/Test/actions/workflows/ci.yml)
 
 A **$0, verifiable** voice-agent proof: a provider-agnostic **NLU → dialog → tool →
 confirmation** core for two receptionist tasks — **booking appointments** and
