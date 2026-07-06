@@ -1,0 +1,4 @@
+{"ts": 1783335772.492, "event": "nlu", "input": "Can you transfer my call?", "result": {"intent": "route_call", "slots": {"date": null, "time": null, "name": null, "department": null}, "confidence": 0.8}}
+{"ts": 1783335772.492, "event": "nlu", "input": "billing", "result": {"intent": "route_call", "slots": {"date": null, "time": null, "name": null, "department": "billing"}, "confidence": 0.8}}
+{"ts": 1783335772.492, "event": "tool", "name": "route_call", "ok": true, "result": {"department": "billing", "target": "queue:billing", "mode": "routing-decision-simulation"}}
+{"ts": 1783335772.492, "event": "state", "state": "routed", "slots": {"date": null, "time": null, "name": null, "department": "billing"}}

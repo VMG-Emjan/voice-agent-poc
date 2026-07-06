@@ -1,0 +1,19 @@
+{
+  "level": "B",
+  "generated_at_utc": "2026-07-06T11:02:59.992824+00:00",
+  "git_commit": "UNKNOWN (no git)",
+  "command": "python scripts/run_voice_demo.py --record artifacts/level-b",
+  "python": "3.11.9",
+  "nlu_mode": "deterministic",
+  "components": {
+    "stt": "faster-whisper:base",
+    "tts": "piper:en_US-amy-medium.onnx",
+    "nlu": "deterministic (rule-based, offline)"
+  },
+  "hand_edited_after_generation": false,
+  "input_audio": "synthetic (Piper TTS)",
+  "human_microphone": false,
+  "barge_in_vad": "UNVERIFIED (not exercised in this run)",
+  "live_livekit_room": "UNVERIFIED (see providers/livekit/)",
+  "fixed_clock": "2026-07-06T10:00:00"
+}

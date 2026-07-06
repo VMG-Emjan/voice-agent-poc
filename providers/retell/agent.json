@@ -1,0 +1,10 @@
+{
+  "_step": "2. Create the agent AFTER the response engine. Put the llm_id from step 1 below. POST https://api.retellai.com/create-agent.",
+  "response_engine": {
+    "type": "retell-llm",
+    "llm_id": "REPLACE_WITH_LLM_ID_FROM_STEP_1"
+  },
+  "agent_name": "Reception Voice Agent",
+  "language": "en-US",
+  "voice_id": "REPLACE_WITH_YOUR_RETELL_VOICE_ID"
+}

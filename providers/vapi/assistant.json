@@ -1,0 +1,63 @@
+{
+  "name": "Reception Voice Agent (appointment booking + call routing)",
+  "firstMessage": "Hi! I can book an appointment or transfer your call. How can I help?",
+  "model": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a phone receptionist. You can book appointments (collect name, date, time, confirm before booking) and route calls to sales, support, billing, or reception. Never book without explicit confirmation. Use the provided tools; do not invent availability."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "check_availability",
+          "description": "Return free 30-minute slots for a given date.",
+          "parameters": {
+            "type": "object",
+            "properties": { "date": { "type": "string", "description": "YYYY-MM-DD" } },
+            "required": ["date"]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "book_slot",
+          "description": "Book an appointment after the caller confirms.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "date": { "type": "string", "description": "YYYY-MM-DD" },
+              "time": { "type": "string", "description": "HH:MM (24h)" }
+            },
+            "required": ["name", "date", "time"]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "route_call",
+          "description": "Route the call to a department.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "department": {
+                "type": "string",
+                "enum": ["sales", "support", "billing", "reception"]
+              }
+            },
+            "required": ["department"]
+          }
+        }
+      }
+    ]
+  },
+  "voice": { "provider": "11labs", "voiceId": "REPLACE_WITH_YOUR_VOICE_ID" },
+  "transcriber": { "provider": "deepgram", "model": "nova-2", "language": "en" }
+}

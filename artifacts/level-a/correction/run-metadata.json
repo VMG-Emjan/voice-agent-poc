@@ -1,0 +1,14 @@
+{
+  "level": "A",
+  "generated_at_utc": "2026-07-06T11:02:52.632974+00:00",
+  "git_commit": "UNKNOWN (no git)",
+  "command": "python scripts/run_text_demo.py --scenario correction",
+  "python": "3.11.9",
+  "nlu_mode": "deterministic",
+  "components": {
+    "nlu": "deterministic (rule-based, offline)"
+  },
+  "hand_edited_after_generation": false,
+  "scenario": "correction",
+  "fixed_clock": "2026-07-06T10:00:00"
+}

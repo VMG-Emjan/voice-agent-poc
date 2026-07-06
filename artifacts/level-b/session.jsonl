@@ -1,0 +1,15 @@
+{"ts": 1783335777.408, "event": "stt", "turn": 0, "expected": "I would like to book an appointment", "recognized": "I would like to book an appointment.", "model": "faster-whisper:base"}
+{"ts": 1783335777.41, "event": "nlu", "input": "I would like to book an appointment.", "result": {"intent": "book_appointment", "slots": {"date": null, "time": null, "name": null, "department": null}, "confidence": 0.85}}
+{"ts": 1783335777.505, "event": "tts", "turn": 0, "text": "Sure — what name is the appointment under?", "wav": "turn00_bot.wav"}
+{"ts": 1783335777.983, "event": "stt", "turn": 1, "expected": "My name is John Smith", "recognized": "My name is John Smith.", "model": "faster-whisper:base"}
+{"ts": 1783335777.983, "event": "nlu", "input": "My name is John Smith.", "result": {"intent": "unknown", "slots": {"date": null, "time": null, "name": "John Smith", "department": null}, "confidence": 0.0}}
+{"ts": 1783335778.197, "event": "tts", "turn": 1, "text": "What day would you like? (e.g. tomorrow, or 2026-07-12)", "wav": "turn01_bot.wav"}
+{"ts": 1783335778.743, "event": "stt", "turn": 2, "expected": "on 2026-07-12", "recognized": "on 2026-07-12.", "model": "faster-whisper:base"}
+{"ts": 1783335778.744, "event": "nlu", "input": "on 2026-07-12.", "result": {"intent": "book_appointment", "slots": {"date": "2026-07-12", "time": null, "name": null, "department": null}, "confidence": 0.5}}
+{"ts": 1783335778.868, "event": "tts", "turn": 2, "text": "What time works for you? (e.g. 14:30)", "wav": "turn02_bot.wav"}
+{"ts": 1783335779.328, "event": "stt", "turn": 3, "expected": "at 3 PM", "recognized": "at 3 p.m.", "model": "faster-whisper:base"}
+{"ts": 1783335779.328, "event": "nlu", "input": "at 3 p.m.", "result": {"intent": "unknown", "slots": {"date": null, "time": null, "name": null, "department": null}, "confidence": 0.0}}
+{"ts": 1783335779.44, "event": "tts", "turn": 3, "text": "What time works for you? (e.g. 14:30)", "wav": "turn03_bot.wav"}
+{"ts": 1783335779.865, "event": "stt", "turn": 4, "expected": "yes", "recognized": "Yes.", "model": "faster-whisper:base"}
+{"ts": 1783335779.865, "event": "nlu", "input": "Yes.", "result": {"intent": "unknown", "slots": {"date": null, "time": null, "name": null, "department": null}, "confidence": 0.0}}
+{"ts": 1783335779.992, "event": "tts", "turn": 4, "text": "What time works for you? (e.g. 14:30)", "wav": "turn04_bot.wav"}

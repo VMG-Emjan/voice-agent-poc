@@ -1,0 +1,4 @@
+# Keep committed evidence byte-identical across platforms so checksums.sha256
+# still verifies after a clone on Linux/macOS (no CRLF/LF rewriting).
+artifacts/** -text
+*.wav binary

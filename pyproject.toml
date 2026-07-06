@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-agent-poc"
+version = "0.1.0"
+description = "Verifiable $0 voice / conversational-AI POC: appointment booking + call routing over a provider-agnostic STT -> NLU -> dialog -> tool -> TTS core (LiveKit primary; Vapi/Retell adapters)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "voice-agent-poc" }]
+keywords = [
+  "voice-agent", "conversational-ai", "ivr", "nlu", "livekit",
+  "vapi", "retell", "appointment-booking", "call-routing",
+  "local-llm", "speech-to-text", "text-to-speech", "barge-in",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# Deterministic core + tests need NOTHING beyond the stdlib + these dev tools.
+dev = ["pytest>=8", "ruff>=0.6"]
+# Real local voice pipeline (Level-B). Heavy; NOT installed in CI.
+voice = ["faster-whisper>=1.0", "piper-tts>=1.2"]
+# Optional local-LLM NLU via an OpenAI-compatible localhost endpoint (Ollama).
+llm = ["httpx>=0.27"]
+
+[project.scripts]
+voice-agent = "voice_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# scripts + livekit agent insert sys.path before importing the local package,
+# so import-order / module-level-import-not-at-top are expected there.
+"scripts/*.py" = ["E402", "I001"]
+"providers/livekit/agent.py" = ["E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,46 @@
+{
+  "_step": "1. Create a Retell LLM (response engine) first: POST https://api.retellai.com/create-retell-llm. The returned llm_id goes into agent.json.",
+  "model": "gpt-4o-mini",
+  "general_prompt": "You are a phone receptionist. Book appointments (collect name, date, time, and confirm before booking) and route calls to sales, support, billing, or reception. Never book without explicit confirmation. Use tools; do not invent availability.",
+  "general_tools": [
+    {
+      "type": "custom",
+      "name": "check_availability",
+      "description": "Return free 30-minute slots for a date (YYYY-MM-DD).",
+      "url": "https://YOUR-WEBHOOK/check_availability",
+      "parameters": {
+        "type": "object",
+        "properties": { "date": { "type": "string" } },
+        "required": ["date"]
+      }
+    },
+    {
+      "type": "custom",
+      "name": "book_slot",
+      "description": "Book an appointment after caller confirmation.",
+      "url": "https://YOUR-WEBHOOK/book_slot",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "date": { "type": "string" },
+          "time": { "type": "string" }
+        },
+        "required": ["name", "date", "time"]
+      }
+    },
+    {
+      "type": "custom",
+      "name": "route_call",
+      "description": "Route the call to a department.",
+      "url": "https://YOUR-WEBHOOK/route_call",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "department": { "type": "string", "enum": ["sales", "support", "billing", "reception"] }
+        },
+        "required": ["department"]
+      }
+    }
+  ]
+}

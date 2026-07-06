@@ -1,0 +1,31 @@
+# secrets & env
+.env
+*.key
+*.pem
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# local model files (STT/TTS/LLM) — never commit weights
+models/
+*.onnx
+*.onnx.json
+*.bin
+*.gguf
+
+# runtime data (real bookings written at runtime; examples are tracked separately)
+data/appointments.json
+
+# runtime work dirs created by demo scripts (isolated appointments.json copies)
+artifacts/**/work/
+# committed evidence (transcripts, logs, metadata, checksums, demo wavs) is KEPT.
+# only ignore oversized raw recordings if ever produced:
+artifacts/**/recording.*

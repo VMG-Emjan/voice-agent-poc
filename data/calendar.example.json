@@ -1,0 +1,7 @@
+{
+  "_note": "Local demo calendar fixture. 'blocked' = slots already unavailable per day (HH:MM). Business hours 09:00-18:00, 30-min slots. Not a real calendar backend.",
+  "blocked": {
+    "2026-07-12": ["09:00", "09:30", "10:00", "14:00"],
+    "2026-07-13": ["11:00", "11:30"]
+  }
+}

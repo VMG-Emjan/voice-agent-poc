@@ -1,0 +1,8 @@
+[
+  {
+    "_note": "Example of the runtime shape written by book_slot to data/appointments.json (gitignored). Names here are synthetic demo data.",
+    "name": "Demo Persson",
+    "datetime": "2026-07-13T15:00",
+    "department": null
+  }
+]

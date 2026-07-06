@@ -1,0 +1,7 @@
+{"ts": 1783335772.629, "event": "nlu", "input": "book an appointment, my name is Ada Lovelace, on 2026-07-12 at 15:00", "result": {"intent": "book_appointment", "slots": {"date": "2026-07-12", "time": "15:00", "name": "Ada Lovelace", "department": null}, "confidence": 0.85}}
+{"ts": 1783335772.629, "event": "tool", "name": "check_availability", "result": {"date": "2026-07-12", "free": ["10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"], "blocked": ["09:00", "09:30", "10:00", "14:00"]}}
+{"ts": 1783335772.63, "event": "nlu", "input": "actually make it 16:00", "result": {"intent": "book_appointment", "slots": {"date": null, "time": "16:00", "name": null, "department": null}, "confidence": 0.5}}
+{"ts": 1783335772.63, "event": "tool", "name": "check_availability", "result": {"date": "2026-07-12", "free": ["10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"], "blocked": ["09:00", "09:30", "10:00", "14:00"]}}
+{"ts": 1783335772.631, "event": "nlu", "input": "yes", "result": {"intent": "unknown", "slots": {"date": null, "time": null, "name": null, "department": null}, "confidence": 0.0}}
+{"ts": 1783335772.632, "event": "tool", "name": "book_slot", "ok": true, "result": {"name": "Ada Lovelace", "datetime": "2026-07-12T16:00", "department": null}}
+{"ts": 1783335772.632, "event": "state", "state": "booked", "slots": {"date": "2026-07-12", "time": "16:00", "name": "Ada Lovelace", "department": null}}
