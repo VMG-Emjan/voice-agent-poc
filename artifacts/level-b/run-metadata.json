@@ -1,7 +1,7 @@
 {
   "level": "B",
-  "generated_at_utc": "2026-07-06T11:02:59.992824+00:00",
-  "git_commit": "UNKNOWN (no git)",
+  "generated_at_utc": "2026-07-06T11:08:49.851937+00:00",
+  "git_commit": "e394b0ecbfe70ac3b4bf9f26dd552482346af49b",
   "command": "python scripts/run_voice_demo.py --record artifacts/level-b",
   "python": "3.11.9",
   "nlu_mode": "deterministic",

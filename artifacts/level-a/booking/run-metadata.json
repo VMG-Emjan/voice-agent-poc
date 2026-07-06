@@ -1,7 +1,7 @@
 {
   "level": "A",
-  "generated_at_utc": "2026-07-06T11:02:52.363765+00:00",
-  "git_commit": "UNKNOWN (no git)",
+  "generated_at_utc": "2026-07-06T11:08:40.784996+00:00",
+  "git_commit": "e394b0ecbfe70ac3b4bf9f26dd552482346af49b",
   "command": "python scripts/run_text_demo.py --scenario booking",
   "python": "3.11.9",
   "nlu_mode": "deterministic",
